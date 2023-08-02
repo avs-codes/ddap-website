@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Instagram from "./components/Instagram.jsx";
+import Schedule from "./components/Schedule.jsx";
+import Team from "./components/Team.jsx";
 import "./App.css";
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <section>
           <h2>Upcoming Events:</h2>
           {/* The schedule would be contained here as a React component */}
+          <Schedule />
         </section>
         <section>
           <p>
@@ -45,7 +48,7 @@ function App() {
         <section>
           <h2>Leadership</h2>
           <div>
-            {/* component that does a foreach loop with two different arrays */}
+            <Team />
           </div>
         </section>
         <section>

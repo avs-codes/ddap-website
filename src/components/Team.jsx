@@ -1,0 +1,50 @@
+import React from "react";
+
+const Team = () => {
+  // Placeholder data with three properties: headshot, name, and title
+  const teamMembers = [
+    {
+      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      name: "Graeme Mounsey",
+      title: "President",
+    },
+    {
+      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      name: "Alex Silva",
+      title: "Vice President",
+    },
+    {
+      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      name: "Lakeisha Sharonina",
+      title: "Head of Design",
+    },
+    {
+      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      name: "Hope Kim",
+      title: "Treasurer",
+    },
+    {
+      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      name: "Anushka Vhatar",
+      title: "Head of Outreach",
+    },
+  ];
+
+  return (
+    <div id="team">
+      {teamMembers.map((member, index) => (
+        <div key={index} className="team-member-profile">
+          <img
+            src={member.headshot}
+            alt={`Headshot of ${member.name}`}
+            className="team-headshot"
+          />
+          <h3 className="team-name">{member.name}</h3>
+          <h4 className="team-title">{member.title}</h4>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Team;
