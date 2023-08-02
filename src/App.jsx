@@ -53,8 +53,7 @@ function App() {
           <h2>Gallery</h2>
           <div>
             {/* IG Widget that is currently not working. The figure tag should stay here, but the script tag could be moved to make it work */}
-            {/* <figure data-behold-id="6woKiegGNe2C7WJWMyUa"></figure>
-            <script type="module" src="https://w.behold.so/widget.js"></script> */}
+            <figure data-behold-id="6woKiegGNe2C7WJWMyUa"></figure>
           </div>
 
           <a href="https://www.instagram.com/parsonscodelab/" target="_blank">
