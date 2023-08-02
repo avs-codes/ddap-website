@@ -1,6 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Instagram from "./components/Instagram.jsx";
 import "./App.css";
 
 function App() {
@@ -53,7 +52,7 @@ function App() {
           <h2>Gallery</h2>
           <div>
             {/* IG Widget that is currently not working. The figure tag should stay here, but the script tag could be moved to make it work */}
-            <figure data-behold-id="6woKiegGNe2C7WJWMyUa"></figure>
+            <Instagram />
           </div>
 
           <a href="https://www.instagram.com/parsonscodelab/" target="_blank">
