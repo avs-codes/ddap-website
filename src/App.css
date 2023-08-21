@@ -114,6 +114,10 @@ a:hover {
   width: 7.5%;
 }
 
+.ig-icon:nth-child(2) {
+  padding-left: 2.5%;
+}
+
 .ig-icon > img {
   width: 100%;
 }

@@ -80,6 +80,13 @@ function App() {
             >
               <img src="https://www.datocms-assets.com/103104/1690991093-ig.svg" />
             </a>
+            <a
+              className="ig-icon"
+              href="https://www.instagram.com/parsonscodelab/"
+              target="_blank"
+            >
+              <img src="https://www.datocms-assets.com/99382/1692656235-slack.png" />
+            </a>
           </div>
         </section>
         <footer></footer>
