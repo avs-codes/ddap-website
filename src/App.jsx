@@ -1,11 +1,10 @@
-import { useState } from "react";
 import Instagram from "./components/Instagram.jsx";
 import Schedule from "./components/Schedule.jsx";
 import Team from "./components/Team.jsx";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
@@ -26,7 +25,6 @@ function App() {
           </p>
         </section>
         <section>
-          <h2>Upcoming Events:</h2>
           {/* The schedule would be contained here as a React component */}
           <Schedule />
         </section>
