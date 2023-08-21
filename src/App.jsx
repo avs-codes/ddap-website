@@ -1,27 +1,42 @@
+import Garden from "./components/Garden.jsx";
 import Instagram from "./components/Instagram.jsx";
 import Schedule from "./components/Schedule.jsx";
 import Team from "./components/Team.jsx";
+
 import "./App.css";
 
 function App() {
-  
-
   return (
     <>
       <main>
-        <section>
-          {/* this will be the div container for our cool sketch / interaction */}
-          <div></div>
-          {/* Not sure if the h1 down here would need to be within the above div or nah */}
-          <h1>
-            A student-led club for designers interested in digital design,
-            coding, and everything in between.
-          </h1>
-        </section>
-        <section>
+        {/* <div className="block1">
+          <div className="title">
+            DIGITAL DESIGN <br /> @ PARSONS
+          </div>
+        </div>
+        <div className="block2">
           <p>
-            We meet on Wednesdays from 4-6pm, either hosting guest speakers or
-            doing live code demos.{" "}
+            A club for students interested in design, code
+            <br /> and everything in between.{" "}
+          </p>
+        </div> */}
+        <Garden />
+        <section></section>
+        <section>
+          <div>
+            <div className="title">DIGITAL DESIGN @ PARSONS</div>
+          </div>
+          <div>
+            <p className="what-we-do">
+              A club for students interested in design, code
+              <br /> and everything in between. <br />
+              <br />
+            </p>
+          </div>
+
+          <p className="what-we-do">
+            We meet on Wednesdays from 4-6pm, either hosting guest speakers,
+            live demos, sharing our work or just hanging out.{" "}
           </p>
         </section>
         <section>
@@ -30,13 +45,15 @@ function App() {
         </section>
         <section>
           <p>
-            Our meetings are open to anyone interested. For e-mail updates about
-            upcoming events, please fill out{" "}
+            Our meetings are open to anyone interested.
+            <br />
+            <br /> For e-mail updates about upcoming events, please fill out{" "}
             <a
               href="https://docs.google.com/forms/d/1FGlV54QMuCoUHvwZAB28qHUk15tnFaWuM7IxeHvVpDY/edit"
               target="_blank"
             >
-              this form
+              this form <br />
+              <br />
             </a>{" "}
             For non New School students interested in attending, please{" "}
             <a href="mailto:codelab@newschool.edu">e-mail us </a> and we’ll snag
@@ -44,21 +61,26 @@ function App() {
           </p>
         </section>
         <section>
-          <h2>Leadership</h2>
+          <h2 className="section-title">Leadership</h2>
           <div>
             <Team />
           </div>
         </section>
         <section>
-          <h2>Gallery</h2>
+          <h2 className="section-title">Gallery</h2>
           <div>
-            {/* IG Widget that is currently not working. The figure tag should stay here, but the script tag could be moved to make it work */}
             <Instagram />
           </div>
 
-          <a href="https://www.instagram.com/parsonscodelab/" target="_blank">
-            <img src="https://www.datocms-assets.com/103104/1690991093-ig.svg" />
-          </a>
+          <div className="ig-link">
+            <a
+              className="ig-icon"
+              href="https://www.instagram.com/parsonscodelab/"
+              target="_blank"
+            >
+              <img src="https://www.datocms-assets.com/103104/1690991093-ig.svg" />
+            </a>
+          </div>
         </section>
         <footer></footer>
       </main>

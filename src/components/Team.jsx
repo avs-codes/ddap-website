@@ -37,10 +37,10 @@ const Team = () => {
           <img
             src={member.headshot}
             alt={`Headshot of ${member.name}`}
-            className="team-headshot"
+            className="team-member-headshot"
           />
-          <h3 className="team-name">{member.name}</h3>
-          <h4 className="team-title">{member.title}</h4>
+          <div className="team-member-name">{member.name}</div>
+          <div className="team-member-title">{member.title}</div>
         </div>
       ))}
     </div>

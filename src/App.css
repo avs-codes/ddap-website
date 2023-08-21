@@ -1,8 +1,26 @@
+@font-face {
+  font-family: "188Pixel";
+  src: url("./fonts/188_Pixel-70.woff2") format("woff2"),
+    url("./fonts/188_Pixel-70.woff Regular.woff") format("woff");
+  /* Add additional src declarations for different font formats if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OCRA";
+  src: url("./fonts/OCR-ARegular.woff2") format("woff2"),
+    url("./fonts/OCR-ARegular.woff") format("woff");
+  /* Add additional src declarations for different font formats if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
 main {
-  max-width: 1280px;
-  margin: 0 auto;
-  width: 70%;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  max-width: 1550px;
+  margin: auto;
+  font-family: "OCRA";
+  letter-spacing: 0.125vw;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -13,67 +31,37 @@ body {
   padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+section {
+  padding-bottom: 10%;
+  margin: 0 auto;
+  width: 60%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 1.5vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  font-size: 2vw;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #0000ff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #6f6fff;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#team {
-  display: grid;
-  grid-template-columns: repeat(3, 3fr); /* 3 columns */
-}
-
-.team-headshot {
-  width: 15%;
-}
-
-.team-member-profile {
-  width: 100%;
+.section-title {
+  font-family: "188Pixel";
+  padding-bottom: 5%;
+  text-decoration: underline;
+  text-underline-offset: 0.5vw;
 }
 
 .hidden {
@@ -96,12 +84,38 @@ h1 {
   cursor: pointer;
 }
 
+.what-we-do {
+  line-height: 4vw;
+}
+
 #all-events {
   background-color: beige;
-  position: fixed;
+  width: 75%;
+  margin: auto;
   overflow: scroll;
   height: 100vh;
   z-index: 6;
+}
+
+#open-all {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ig-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.ig-icon {
+  padding-top: 5%;
+  width: 7.5%;
+}
+
+.ig-icon > img {
+  width: 100%;
 }
 
 button {
@@ -135,4 +149,130 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Event Widget Styling */
+
+.event {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+  padding: 2vw;
+  stroke: black;
+  stroke-width: 0.1vw;
+  stroke-dasharray: 24vw;
+  stroke-dashoffset: 10vw;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='2' stroke-dasharray='17%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-title {
+  font-family: "188Pixel";
+  letter-spacing: normal;
+  font-size: 2vw;
+}
+
+.event-type {
+  font-size: 1vw;
+}
+
+.event-description {
+}
+
+.event-links {
+  display: flex;
+  align-self: flex-start;
+}
+
+.event-link {
+  padding-right: 2vw;
+  font-size: 1vw;
+  padding-top: 4%;
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75vw 2vw 0.75vw 2vw;
+  background-color: #0000ff;
+  color: white;
+  border-radius: 0.75vw;
+}
+
+.event-month {
+  font-size: 1vw;
+  transform: translateY(0.5vw);
+}
+
+.event-day {
+  font-size: 3vw;
+}
+
+/* DDAP Team Styling */
+
+#team {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr); /* 3 columns */
+}
+
+.team-member-profile {
+  width: 100%;
+  padding-bottom: 20%;
+}
+
+.team-member-headshot {
+  width: 90%;
+  padding-bottom: 5%;
+}
+
+.team-member-name {
+  font-size: 2vw;
+  font-family: "188Pixel";
+  letter-spacing: normal;
+}
+
+.team-member-title {
+  font-size: 1vw;
+}
+
+/* Main Title Styling  */
+
+.block1 {
+  display: inline-block;
+  padding: 1.25% 2.5% 1.25% 2.5%;
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  top: 4.5vw;
+  left: 4.75vw;
+}
+
+.block2 {
+  display: inline-block;
+  padding: 1.25% 2.5% 1.25% 2.5%;
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  top: 22.2vw;
+  left: 4.75vw;
+}
+
+.title {
+  font-size: 4vw;
+  font-family: "188Pixel";
+}
+
+.checkboxFour label {
+  border-radius: 0;
+}
+
+input:checked {
+  background-color: #8e8eff;
 }
