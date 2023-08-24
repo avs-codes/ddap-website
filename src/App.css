@@ -21,7 +21,7 @@
     opacity: 0.55;
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -31,7 +31,7 @@
 
 @keyframes controlsHoverOut {
   from {
-    opacity: 1;
+    opacity: 0.8;
   }
   to {
     opacity: 0.55;
@@ -62,7 +62,7 @@ body {
 }
 
 section {
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   margin: 0 auto;
   width: 60%;
 }
@@ -196,6 +196,7 @@ button:hover {
 
 .event-type {
   font-size: 1vw;
+  transform: translateY(-0.25vw);
 }
 
 .event-description {
@@ -209,7 +210,7 @@ button:hover {
 .event-link {
   padding-right: 2vw;
   font-size: 1vw;
-  padding-top: 4%;
+  padding-top: 1.25%;
 }
 
 .event-date {
@@ -256,6 +257,7 @@ button:hover {
 
 .team-member-title {
   font-size: 1vw;
+  transform: translateY(-0.25vw);
 }
 
 /* Main Title Styling  */

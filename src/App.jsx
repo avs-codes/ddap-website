@@ -5,6 +5,11 @@ import Team from "./components/Team.jsx";
 import React, { useState } from "react";
 
 import "./App.css";
+("");
+
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+};
 
 function App() {
   const [hovered, setHovered] = useState(false);
@@ -38,14 +43,13 @@ function App() {
           </div>
           <div>
             <p className="what-we-do">
-              A club for students interested in design, code
-              <br /> and everything in between. <br />
+              <br />
             </p>
           </div>
 
           <p className="what-we-do">
             We meet on Wednesdays from 4-6pm, either hosting guest speakers,
-            live demos, sharing our work or just hanging out.{" "}
+            live demos, sharing our work or just vibing
           </p>
         </section>
         <section>
@@ -68,7 +72,6 @@ function App() {
             <a href="mailto:codelab@newschool.edu">e-mail us </a> and we’ll get
             you a guest pass
           </p>
-          <input type="checkbox"></input>
         </section>
         <section>
           <h2 className="section-title">Leadership</h2>
