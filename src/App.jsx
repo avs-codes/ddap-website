@@ -2,27 +2,37 @@ import Garden from "./components/Garden.jsx";
 import Instagram from "./components/Instagram.jsx";
 import Schedule from "./components/Schedule.jsx";
 import Team from "./components/Team.jsx";
+import React, { useState } from "react";
 
 import "./App.css";
 
 function App() {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <>
       <main>
-        {/* <div className="block1">
-          <div className="title">
-            DIGITAL DESIGN <br /> @ PARSONS
-          </div>
-        </div>
-        <div className="block2">
-          <p>
-            A club for students interested in design, code
-            <br /> and everything in between.{" "}
-          </p>
-        </div> */}
+        <a href="#title">
+          <img
+            id="anchor"
+            src="https://www.datocms-assets.com/99382/1692823390-a.svg"
+            style={{ stroke: "white" }}
+            className={`controlsHoverIn ${hovered ? "" : "controlsHoverOut"}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          ></img>
+        </a>
         <Garden />
-        <section></section>
-        <section>
+
+        <section id="title" class="title-section">
           <div>
             <div className="title">DIGITAL DESIGN @ PARSONS</div>
           </div>
@@ -30,7 +40,6 @@ function App() {
             <p className="what-we-do">
               A club for students interested in design, code
               <br /> and everything in between. <br />
-              <br />
             </p>
           </div>
 
@@ -45,20 +54,21 @@ function App() {
         </section>
         <section>
           <p>
-            Our meetings are open to anyone interested.
+            Our meetings are open to everyone !
             <br />
             <br /> For e-mail updates about upcoming events, please fill out{" "}
             <a
               href="https://docs.google.com/forms/d/1FGlV54QMuCoUHvwZAB28qHUk15tnFaWuM7IxeHvVpDY/edit"
               target="_blank"
             >
-              this form <br />
+              this form. <br />
               <br />
             </a>{" "}
             For non New School students interested in attending, please{" "}
-            <a href="mailto:codelab@newschool.edu">e-mail us </a> and we’ll snag
+            <a href="mailto:codelab@newschool.edu">e-mail us </a> and we’ll get
             you a guest pass
           </p>
+          <input type="checkbox"></input>
         </section>
         <section>
           <h2 className="section-title">Leadership</h2>

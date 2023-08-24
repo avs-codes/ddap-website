@@ -16,6 +16,36 @@
   font-style: normal;
 }
 
+@keyframes controlsHoverIn {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.controlsHoverIn {
+  animation: controlsHoverIn 0.25s ease-out 0s 1 normal forwards;
+}
+
+@keyframes controlsHoverOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.55;
+  }
+}
+
+.controlsHoverOut {
+  animation: controlsHoverOut 0.25s ease-out 0s 1 normal forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   max-width: 1550px;
   margin: auto;
@@ -107,6 +137,7 @@ a:hover {
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-top: 5%;
 }
 
 .ig-icon {
@@ -130,29 +161,10 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 /* Event Widget Styling */
@@ -271,12 +283,75 @@ button:focus-visible {
 .title {
   font-size: 4vw;
   font-family: "188Pixel";
+  padding-bottom: 2.5%;
 }
 
-.checkboxFour label {
-  border-radius: 0;
+.title-section {
+  padding-top: 5%;
 }
 
-input:checked {
-  background-color: #8e8eff;
+#anchor {
+  z-index: 2;
+  position: fixed;
+  top: 2.5%;
+  left: 2.5%;
+  width: 5%;
+  padding: 1.25%;
+  opacity: 0.6;
+  border: 1px;
+}
+
+#anchor:hover {
+  opacity: 1;
+}
+
+/* Garden.css */
+.checkbox-grid {
+  justify-items: center;
+  align-items: center;
+}
+
+.checkbox {
+  width: 1.25vw;
+  height: 1.25vw;
+  margin: 0.3vw 0vw 0.3vw 0vw;
+  box-sizing: border-box;
+  background-color: white;
+  border: 0.1vw solid #bdbdbd;
+  border-radius: 0.25vw 0.25vw;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:hover {
+  border-color: #4f4f4f;
+}
+
+.checkbox::after {
+  content: "";
+  padding: none;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* background-color: #2196f3;  */
+  border-radius: 0.15vw;
+}
+
+.checkbox.checked::after {
+  display: block;
+}
+
+.checkbox.checked:hover {
+  border-color: #919191;
+}
+
+/* If you want to style the checkbox as checked initially */
+.checkbox.checked {
+  /* background-color: #2196f3;
+  border-color: #2196f3; */
+}
+
+/* Hide the actual checkbox input */
+.checkbox input {
+  display: none;
 }
