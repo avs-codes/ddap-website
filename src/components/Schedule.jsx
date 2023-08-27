@@ -22,97 +22,89 @@ function Schedule() {
     return sheetData;
   };
 
-  const filterData = (data) => {
-    const filtered = data.filter((item) => item.status === "upcoming");
-    const combined = {
-      filtered: filtered,
-      whole: data,
-    };
-
-    return combined;
-  };
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData().then((response) => setData(response));
+    fetchData()
+      .then((response) => response.filter((item) => item.status === "upcoming"))
+      .then((filtered) => setData(filtered));
   }, []);
-
-  const generateFiltered = (entry, index) => {
-    return (
-      <div key={index} className="event">
-        <div className="event-details">
-          <h2 className="event-title">{entry["event"]}</h2>
-          {/* <div className="event-description">{entry["description"]}</div> */}
-          <div className="event-type">
-            {entry["type"]} • {entry["subject"]}
-          </div>
-
-          <div className="event-links">
-            <a className="event-link" href={entry["link1"]}>
-              {entry["link1"]}
-            </a>
-            <a className="event-link" href={entry["link2"]}>
-              {entry["link2"]}
-            </a>
-          </div>
-        </div>
-        <div className="event-date">
-          <div className="event-month">{entry["month"]}</div>
-          <div className="event-day"> {entry["date"]}</div>
-        </div>
-      </div>
-    );
-  };
-
-  const generateWhole = (entry, index) => {
-    return (
-      <div key={index} className="event">
-        <div className="event-details">
-          <h2 className="event-title">{entry["event"]}</h2>
-          <div className="event-description">{entry["description"]}</div>
-          <div className="event-links">
-            <a href={entry["link1"]}>{entry["link1"]}</a>
-            <a href={entry["link2"]}>{entry["link2"]}</a>
-          </div>
-        </div>
-        <div className="event-date">
-          <div className="event-month">{entry["month"]}</div>
-          <div className="event-day"> {entry["date"]}</div>
-        </div>
-      </div>
-    );
-  };
 
   const handleShowAllEvents = () => {
     const allEvents = document.getElementById("all-events");
     const bodyWrapper = document.getElementById("body-wrapper");
-
+    console.log("data:", data);
     allEvents.classList.toggle("hidden");
     bodyWrapper.classList.toggle("hidden");
 
     document.querySelector("body").classList.toggle("no-scroll");
   };
 
+  const generateDescriptive = (entry) => {
+    console.log(entry)
+    const template = `
+      <div  class="event">
+        <div class="event-details">
+          <h1 class="event-title">${entry["event"]}</h1>
+          <div class="event-description">${entry["description"]}</div>
+          <div class="event-links">
+            <a href=${entry["link1"]}>${entry["link1"]}</a>
+            <a href=${entry["link2"]}>${entry["link2"]}</a>
+          </div>
+        </div>
+        <div class="event-date">
+          <div class="event-month">${entry["month"]}</div>
+          <div class="event-day"> ${entry["date"]}</div>
+        </div>
+      </div>
+    `
+    return template
+ 
+    ;
+  };
+
+  const loadArticle = (event) => {
+    handleShowAllEvents();
+    console.log("loadArticles() called", parseInt(event.target.dataset.index));
+    document.getElementById("all-events").innerHTML = generateDescriptive(data[parseInt(event.target.dataset.index)]);
+  };
+
+  const hide = () => {
+    console.log("hide() called");
+    handleShowAllEvents();
+    document.querySelector("body").classList.remove("no-scroll");
+  };
+
   return (
     <>
       <h2 className="section-title">Upcoming Events:</h2>
       <div id="filtered-events">
-        {data
-          .filter((item) => item.status === "upcoming")
-          .splice(0, 3)
-          .map((item, index) => generateFiltered(item, index))}
-      </div>
+        {data.map((item, index) => (
+          <div key={index} data-index={index} className="event" onClick={loadArticle}>
+            <div data-index={index} className="event-details">
+              <h2 data-index={index} className="event-title">{item["event"]}</h2>
+              <div data-index={index} className="event-type">
+                {item["type"]} • {item["subject"]}
+              </div>
 
-      <button id="open-all" onClick={handleShowAllEvents}>
-        More
-      </button>
-      <div id="body-wrapper" onClick={handleShowAllEvents} className="hidden">
-        <div id="all-events" className="hidden">
-          {data
-            .filter((item) => item.status != "none")
-            .map((item, index) => generateWhole(item, index))}
-        </div>
+              <div data-index={index} className="event-links">
+                <a data-index={index} className="event-link" href={item["link1"]}>
+                  {item["link1"]}
+                </a>
+                <a data-index={index} className="event-link" href={item["link2"]}>
+                  {item["link2"]}
+                </a>
+              </div>
+            </div>
+            <div data-index={index} className="event-date">
+              <div data-index={index} className="event-month">{item["month"]}</div>
+              <div data-index={index} className="event-day"> {item["date"]}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div id="body-wrapper" onClick={hide} className="hidden">
+        <div id="all-events" className="hidden"></div>
       </div>
     </>
   );
