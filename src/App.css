@@ -16,6 +16,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Work Sans";
+  src: url("./fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  /* Add additional src declarations for different font formats if needed */
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
 @keyframes controlsHoverIn {
   from {
     opacity: 0.55;
@@ -49,10 +57,8 @@ html {
 main {
   max-width: 1550px;
   margin: auto;
-  font-family: "Times";
-  /* letter-spacing: 0.125vw;
-  line-height: 1.5; */
-  font-weight: 400;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 350;
 }
 
 body {
@@ -98,34 +104,21 @@ a:hover {
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 .no-scroll {
   overflow: hidden;
 }
 
-#body-wrapper {
-  position: fixed;
-  top: 0;
-  overflow: scroll;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(36, 29, 47, 0.85);
-  z-index: 5;
-  cursor: pointer;
-}
+
 
 .what-we-do {
   line-height: 3vw;
 }
 
-#all-events {
-  background-color: beige;
-  width: 75%;
-  margin: auto;
-  overflow: scroll;
-  height: 100vh;
-  z-index: 6;
-}
+
 
 #open-all {
   margin: auto;
@@ -156,7 +149,7 @@ a:hover {
 button {
   color: #888;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -167,7 +160,43 @@ button:hover {
   border-color: #646cff;
 }
 
+#button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#show-more {
+ 
+}
+
 /* Event Widget Styling */
+
+.hide-children div:nth-child(n+4) {
+    display: none;
+}
+
+#body-wrapper {
+  position: fixed;
+  top: 0;
+  overflow: scroll;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(36, 29, 47, 0.85);
+  z-index: 5;
+  cursor: pointer;
+}
+
+#all-events {
+  background-color: rgb(255, 255, 255);
+  width: 45vw;
+  margin: auto;
+  overflow: scroll;
+  height: fit-content;
+  z-index: 6;
+  padding: 0 2vw;
+}
 
 .event {
   cursor: pointer;
@@ -183,6 +212,56 @@ button:hover {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='2' stroke-dasharray='17%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
+.event:hover {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='blue' stroke-width='5' stroke-dasharray='17%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.selected-event {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+  padding: 2vw;
+
+}
+
+.selected-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw 2vw 1vw 2vw;
+  background-color: #0000ff;
+  color: white;
+  border-radius: 0.75vw;
+  align-self: flex-start;
+  margin-top: 2vw;
+}
+
+.selected-title {
+  font-family: "188Pixel";
+  letter-spacing: normal;
+  font-size: 3.5vw;
+  text-decoration: underline;
+  text-underline-offset: 1vw;
+}
+
+.selected-type {
+  margin-top: 0;
+  margin-bottom: 0.75vw;
+  font-weight: 350;
+}
+
+.selected-subject {
+  margin-top: 0;
+  margin-bottom: 0.75vw;
+  font-weight: 350;
+}
+
+.selected-description {
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+}
 .event-details {
   display: flex;
   flex-direction: column;
@@ -205,6 +284,12 @@ button:hover {
 .event-links {
   display: flex;
   align-self: flex-start;
+}
+
+.selected-links {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .event-link {

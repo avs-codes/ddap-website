@@ -37,7 +37,7 @@ function App() {
         </a>
         <Garden />
 
-        <section id="title" class="title-section">
+        <section id="title" className="title-section">
           <div>
             <div className="title">DIGITAL DESIGN @ PARSONS</div>
           </div>

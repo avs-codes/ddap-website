@@ -33,26 +33,27 @@ function Schedule() {
   const handleShowAllEvents = () => {
     const allEvents = document.getElementById("all-events");
     const bodyWrapper = document.getElementById("body-wrapper");
-    console.log("data:", data);
     allEvents.classList.toggle("hidden");
     bodyWrapper.classList.toggle("hidden");
+    bodyWrapper.classList.toggle("flex");
 
     document.querySelector("body").classList.toggle("no-scroll");
   };
 
   const generateDescriptive = (entry) => {
-    console.log(entry)
     const template = `
-      <div  class="event">
+      <div  class="selected-event">
         <div class="event-details">
-          <h1 class="event-title">${entry["event"]}</h1>
-          <div class="event-description">${entry["description"]}</div>
-          <div class="event-links">
+          <h1 class="selected-title">${entry["event"]}</h1>
+          <h4 class="selected-type">Format: ${entry["type"]}</h4>
+          <h4 class="selected-subject">About: ${entry["subject"]}</h4>
+          <div class="selected-description">${entry["description"]}</div>
+          <div class="selected-links">
             <a href=${entry["link1"]}>${entry["link1"]}</a>
             <a href=${entry["link2"]}>${entry["link2"]}</a>
           </div>
         </div>
-        <div class="event-date">
+        <div class="selected-date">
           <div class="event-month">${entry["month"]}</div>
           <div class="event-day"> ${entry["date"]}</div>
         </div>
@@ -65,20 +66,30 @@ function Schedule() {
 
   const loadArticle = (event) => {
     handleShowAllEvents();
-    console.log("loadArticles() called", parseInt(event.target.dataset.index));
     document.getElementById("all-events").innerHTML = generateDescriptive(data[parseInt(event.target.dataset.index)]);
   };
 
   const hide = () => {
-    console.log("hide() called");
     handleShowAllEvents();
     document.querySelector("body").classList.remove("no-scroll");
   };
 
+  const toggleShowChildren = () => {
+    document.getElementById('filtered-events').classList.toggle('hide-children')
+
+    const hideButton = document.getElementById('show-more');
+
+    if (hideButton.innerHTML === "More") {
+      hideButton.innerHTML = "Less"
+    } else {
+      hideButton.innerHTML = "More"
+    }
+  }
+
   return (
     <>
       <h2 className="section-title">Upcoming Events:</h2>
-      <div id="filtered-events">
+      <div id="filtered-events" class="hide-children">
         {data.map((item, index) => (
           <div key={index} data-index={index} className="event" onClick={loadArticle}>
             <div data-index={index} className="event-details">
@@ -102,6 +113,9 @@ function Schedule() {
             </div>
           </div>
         ))}
+      </div>
+      <div id="button-wrapper">
+        <button id="show-more" onClick={toggleShowChildren}>More</button>
       </div>
       <div id="body-wrapper" onClick={hide} className="hidden">
         <div id="all-events" className="hidden"></div>
