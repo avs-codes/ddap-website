@@ -5,8 +5,6 @@ class Garden extends Component {
     super(props);
 
     this.state = {
-      rows: 28,
-      cols: 48,
       checkboxGrid: [],
       seedPlantedCount: 0,
       hoverCount: 0,
@@ -18,25 +16,37 @@ class Garden extends Component {
     this.createCheckboxGrid();
   }
 
-  createCheckboxGrid() {
-    const { rows, cols } = this.state;
-    const checkboxGrid = [];
+  createCheckboxGrid = () => {
+    const minCellSize = 16; // Minimum size of each div
+    const marginX = 0.15; // Margin in vw
+    const marginY = 0.11; // Margin in vw
+    const border = 0.1; // Border in vw
 
+    const { innerWidth, innerHeight } = window;
+
+    // Calculate the available width and height considering margins and borders
+    const availableWidth =
+      innerWidth - marginX * 2 * innerWidth - border * 2 * innerWidth;
+    const availableHeight =
+      innerHeight - marginY * 2 * innerHeight - border * 2 * innerHeight;
+
+    // Calculate the number of rows and columns based on the adjusted cell size
+    const rows = Math.floor(availableHeight / minCellSize);
+    const cols = Math.floor(availableWidth / minCellSize);
+
+    // Calculate the actual cell size to fill the viewport with margins and borders
+    const cellSize = Math.min(
+      Math.floor(availableWidth / cols),
+      Math.floor(availableHeight / rows)
+    );
+
+    const checkboxGrid = [];
     for (let i = 0; i < rows; i++) {
-      const row = [];
-      for (let j = 0; j < cols; j++) {
-        row.push({});
-      }
+      const row = Array(cols).fill({});
       checkboxGrid.push(row);
     }
 
-    this.setState({ checkboxGrid });
-  }
-
-  handleDivClick = (event) => {
-    if (event.target.parentElement.classList.contains("checkbox-grid")) {
-      plantSeed();
-    }
+    this.setState({ checkboxGrid, rows, cols, cellSize });
   };
 
   // SEED FUNCTIONSSSSSS
@@ -268,10 +278,6 @@ class Garden extends Component {
     });
 
     this.setState({ checkboxGrid: updatedGrid });
-
-    setTimeout(() => {
-      this.evolveSeedTwoAgainAgain(rowIndex, colIndex);
-    }, 500);
   }
 
   // evolveSeedTwoAgainAgain(rowIndex, colIndex) {
@@ -538,6 +544,227 @@ class Garden extends Component {
     this.setState({ checkboxGrid: updatedGrid });
   }
 
+  // SEED SIX
+  seedSix(rowIndex, colIndex) {
+    const { seedPlantedCount } = this.state;
+
+    const updatedGrid = [...this.state.checkboxGrid];
+    updatedGrid[rowIndex][colIndex].checked = true;
+
+    this.setState({
+      checkboxGrid: updatedGrid,
+      seedPlantedCount: seedPlantedCount + 1,
+    });
+
+    const checkboxElement = document.getElementById(
+      `checkbox-${rowIndex}-${colIndex}`
+    );
+    if (checkboxElement) {
+      checkboxElement.style.backgroundColor = "#958038";
+
+      setTimeout(() => {
+        this.evolveSeedSix(rowIndex, colIndex);
+      }, 500);
+    }
+  }
+
+  evolveSeedSix(rowIndex, colIndex) {
+    const nearbyIndices = [
+      [rowIndex - 1, colIndex],
+      [rowIndex + 1, colIndex],
+      [rowIndex, colIndex - 1],
+      [rowIndex, colIndex + 1],
+    ];
+
+    const updatedGrid = [...this.state.checkboxGrid];
+    const originalCheckbox = document.getElementById(
+      `checkbox-${rowIndex}-${colIndex}`
+    );
+    if (originalCheckbox) {
+      originalCheckbox.style.backgroundColor = "#FFF5D2"; // Change the background color
+    }
+
+    nearbyIndices.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#FFF8F4";
+        }
+      }
+    });
+
+    this.setState({ checkboxGrid: updatedGrid });
+
+    setTimeout(() => {
+      this.evolveSeedSixAgain(rowIndex, colIndex);
+    }, 500);
+  }
+
+  evolveSeedSixAgain(rowIndex, colIndex) {
+    const nearbyIndicesLightPink = [
+      [rowIndex - 1, colIndex],
+      [rowIndex + 1, colIndex],
+      [rowIndex, colIndex + 1],
+      [rowIndex, colIndex - 1],
+    ];
+
+    const nearbyIndicesDarkPink = [
+      [rowIndex - 1, colIndex - 1],
+      [rowIndex + 1, colIndex - 1],
+      [rowIndex - 1, colIndex + 1],
+      [rowIndex + 1, colIndex + 1],
+    ];
+
+    const nearbyIndicesGreen = [
+      [rowIndex - 2, colIndex],
+      [rowIndex + 2, colIndex],
+      [rowIndex, colIndex + 2],
+      [rowIndex, colIndex - 2],
+    ];
+
+    const updatedGrid = [...this.state.checkboxGrid];
+    const originalCheckbox = document.getElementById(
+      `checkbox-${rowIndex}-${colIndex}`
+    );
+
+    nearbyIndicesLightPink.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#FFF8F4";
+        }
+      }
+    });
+
+    nearbyIndicesDarkPink.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#FFD6D6";
+        }
+      }
+    });
+
+    nearbyIndicesGreen.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#D9FFC7";
+        }
+      }
+    });
+
+    this.setState({ checkboxGrid: updatedGrid });
+
+    setTimeout(() => {
+      if (Math.random() < 0.5) {
+        this.evolveSeedSixAgainAgain(rowIndex, colIndex);
+      }
+    }, 500);
+  }
+
+  evolveSeedSixAgainAgain(rowIndex, colIndex) {
+    const nearbyIndicesLightPink = [
+      [rowIndex - 1, colIndex],
+      [rowIndex + 1, colIndex],
+      [rowIndex, colIndex + 1],
+      [rowIndex, colIndex - 1],
+    ];
+
+    const nearbyIndicesDarkPink = [
+      [rowIndex + 1, colIndex - 1],
+      [rowIndex + 1, colIndex - 2],
+      [rowIndex + 2, colIndex - 1],
+      [rowIndex + 2, colIndex - 2],
+
+      [rowIndex - 1, colIndex - 1],
+      [rowIndex - 1, colIndex - 2],
+      [rowIndex - 2, colIndex - 1],
+      [rowIndex - 2, colIndex - 2],
+
+      [rowIndex - 1, colIndex + 1],
+      [rowIndex - 1, colIndex + 2],
+      [rowIndex - 2, colIndex + 1],
+      [rowIndex - 2, colIndex + 2],
+
+      [rowIndex + 1, colIndex + 1],
+      [rowIndex + 1, colIndex + 2],
+      [rowIndex + 2, colIndex + 1],
+      [rowIndex + 2, colIndex + 2],
+    ];
+
+    const nearbyIndicesGreen = [
+      [rowIndex - 3, colIndex + 1],
+      [rowIndex - 3, colIndex - 2],
+      [rowIndex - 3, colIndex + 2],
+      [rowIndex - 3, colIndex - 2],
+
+      [rowIndex + 3, colIndex + 1],
+      [rowIndex + 3, colIndex - 2],
+      [rowIndex + 3, colIndex + 2],
+      [rowIndex + 3, colIndex - 2],
+
+      [rowIndex - 2, colIndex + 3],
+      [rowIndex + 2, colIndex + 3],
+      [rowIndex - 1, colIndex + 3],
+      [rowIndex + 1, colIndex + 3],
+
+      [rowIndex - 2, colIndex - 3],
+      [rowIndex + 2, colIndex - 3],
+      [rowIndex - 1, colIndex - 3],
+      [rowIndex + 1, colIndex - 3],
+
+      [rowIndex + 3, colIndex - 1],
+      [rowIndex - 3, colIndex - 1],
+
+      [rowIndex + 2, colIndex],
+      [rowIndex - 2, colIndex],
+      [rowIndex, colIndex + 2],
+      [rowIndex, colIndex - 2],
+    ];
+
+    const updatedGrid = [...this.state.checkboxGrid];
+    const originalCheckbox = document.getElementById(
+      `checkbox-${rowIndex}-${colIndex}`
+    );
+
+    nearbyIndicesLightPink.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#FFF8F4";
+        }
+      }
+    });
+
+    nearbyIndicesDarkPink.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#D7FFDB";
+        }
+      }
+    });
+
+    nearbyIndicesGreen.forEach(([r, c]) => {
+      if (r >= 0 && r < this.state.rows && c >= 0 && c < this.state.cols) {
+        updatedGrid[r][c].checked = true;
+        const nearbyCheckbox = document.getElementById(`checkbox-${r}-${c}`);
+        if (nearbyCheckbox) {
+          nearbyCheckbox.style.backgroundColor = "#F5B7FF";
+        }
+      }
+    });
+
+    this.setState({ checkboxGrid: updatedGrid });
+  }
+
   // END OF SEED FUNCTIONSSSSSS
 
   plantSeed(event, rowIndex, colIndex) {
@@ -550,7 +777,7 @@ class Garden extends Component {
         "seedThree",
         "seedFour",
         "seedFive",
-        // "seedSix",
+        "seedSix",
       ];
       const randomIndex = Math.floor(Math.random() * seedFunctions.length);
       const chosenSeedFunction = seedFunctions[randomIndex];
@@ -559,7 +786,7 @@ class Garden extends Component {
 
       this.setState({ canPlantSeed: false, hoverCount: 0 });
     } else {
-      if (hoverCount < 12) {
+      if (hoverCount < 3) {
         this.setState({ hoverCount: hoverCount + 1 });
       } else {
         this.setState({ canPlantSeed: true });
@@ -576,7 +803,7 @@ class Garden extends Component {
       "seedThree",
       "seedFour",
       "seedFive",
-      // "seedSix",
+      "seedSix",
     ];
     const randomIndex = Math.floor(Math.random() * seedFunctions.length);
     const chosenSeedFunction = seedFunctions[randomIndex];

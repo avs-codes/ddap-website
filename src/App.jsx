@@ -41,15 +41,23 @@ function App() {
           <div>
             <div className="title">DIGITAL DESIGN @ PARSONS</div>
           </div>
-          <div>
-            <p className="what-we-do">
-              <br />
-            </p>
-          </div>
+
+          <p className="what-we-do">
+            Digital Design @ Parsons <i>(D-DAP for short)</i> is a student-run
+            club for designers interested in web design, UX and creative coding.
+          </p>
 
           <p className="what-we-do">
             We meet on Wednesdays from 4-6pm, either hosting guest speakers,
             live demos, sharing our work or just vibing
+          </p>
+          <p className="what-we-do">
+            This semester, we're looking to <u> pay students</u> to give demos
+            on subjects relevant to the club. Check out{" "}
+            <a href="https://forms.gle/zuPjC9pJ7HgYha4MA" target="_blank">
+              this form
+            </a>{" "}
+            if you're interested in the opportunity.
           </p>
         </section>
         <section>
