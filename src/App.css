@@ -236,7 +236,7 @@ button:hover {
 
 #team {
   display: grid;
-  grid-template-columns: repeat(3, 3fr); /* 3 columns */
+  grid-template-columns: repeat(2, 2fr); /* 3 columns */
 }
 
 .team-member-profile {
@@ -311,6 +311,7 @@ button:hover {
 .checkbox-grid {
   justify-items: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .checkbox {

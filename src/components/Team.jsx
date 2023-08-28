@@ -23,11 +23,6 @@ const Team = () => {
       name: "Hope Kim",
       title: "Treasurer",
     },
-    {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
-      name: "Anushka Vhatar",
-      title: "Head of Outreach",
-    },
   ];
 
   return (
