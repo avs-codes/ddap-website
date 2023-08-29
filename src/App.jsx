@@ -82,17 +82,16 @@ function App() {
           </p>
         </section>
         <section>
-          <h2 className="section-title">Leadership</h2>
-          <div>
-            <Team />
-          </div>
-        </section>
-        <section>
           <h2 className="section-title">Gallery</h2>
           <div>
             <Instagram />
           </div>
-
+        </section>
+        <section>
+          <h2 className="section-title">Leadership</h2>
+          <div>
+            <Team />
+          </div>
           <div className="ig-link">
             <a
               className="ig-icon"
@@ -106,10 +105,11 @@ function App() {
               href="https://www.instagram.com/parsonscodelab/"
               target="_blank"
             >
-              <img src="https://www.datocms-assets.com/99382/1692656235-slack.png" />
+              <img src="https://www.datocms-assets.com/99382/1693250696-slack.svg" />
             </a>
           </div>
         </section>
+
         <footer></footer>
       </main>
     </>

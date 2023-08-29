@@ -17,9 +17,9 @@ class Garden extends Component {
   }
 
   createCheckboxGrid = () => {
-    const minCellSize = 16; // Minimum size of each div
+    const minCellSize = 13.5; // Minimum size of each div
     const marginX = 0.15; // Margin in vw
-    const marginY = 0.11; // Margin in vw
+    const marginY = 0.15; // Margin in vw
     const border = 0.1; // Border in vw
 
     const { innerWidth, innerHeight } = window;
