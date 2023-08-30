@@ -1,16 +1,7 @@
 @font-face {
   font-family: "188Pixel";
-  src: url("./fonts/188_Pixel-70.woff2") format("woff2"),
-    url("./fonts/188_Pixel-70.woff Regular.woff") format("woff");
-  /* Add additional src declarations for different font formats if needed */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "OCRA";
-  src: url("./fonts/OCR-ARegular.woff2") format("woff2"),
-    url("./fonts/OCR-ARegular.woff") format("woff");
+  src: url("./assets/fonts/188_Pixel-70.woff2") format("woff2"),
+    url("./assets/fonts/188_Pixel-70.woff Regular.woff") format("woff");
   /* Add additional src declarations for different font formats if needed */
   font-weight: normal;
   font-style: normal;
@@ -18,8 +9,8 @@
 
 @font-face {
   font-family: "Calibre";
-  src: url("./fonts/CalibreRegular.woff2") format("woff2"),
-    url("./fonts/CalibreRegular.woff") format("woff");
+  src: url("./assets/fonts/CalibreRegular.woff2") format("woff2"),
+    url("./assets/fonts/CalibreRegular.woff") format("woff");
   /* Add additional src declarations for different font formats if needed */
   font-weight: 300;
   font-style: normal;
@@ -161,9 +152,6 @@ button:hover {
   justify-content: center;
 }
 
-#show-more {
-}
-
 /* Event Widget Styling */
 
 .hide-children div:nth-child(n + 4) {
@@ -269,9 +257,6 @@ button:hover {
 .event-type {
   font-size: 1vw;
   padding-top: 2.5%;
-}
-
-.event-description {
 }
 
 .event-links {
@@ -424,12 +409,6 @@ button:hover {
 
 .checkbox.checked:hover {
   border-color: #919191;
-}
-
-/* If you want to style the checkbox as checked initially */
-.checkbox.checked {
-  /* background-color: #2196f3;
-  border-color: #2196f3; */
 }
 
 /* Hide the actual checkbox input */

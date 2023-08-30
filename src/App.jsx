@@ -43,7 +43,7 @@ function App() {
           </div>
 
           <p className="what-we-do">
-            Digital Design @ Parsons <i>(D-DAP for short)</i> is a student-run
+            Digital Design @ Parsons <i>(DDAP for short)</i> is a student-run
             club for designers interested in web design, UX and creative coding.
           </p>
 

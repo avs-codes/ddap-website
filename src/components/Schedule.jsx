@@ -89,7 +89,7 @@ function Schedule() {
   return (
     <>
       <h2 className="section-title">Upcoming Events:</h2>
-      <div id="filtered-events" class="hide-children">
+      <div id="filtered-events" className="hide-children">
         {data.map((item, index) => (
           <div key={index} data-index={index} className="event" onClick={loadArticle}>
             <div data-index={index} className="event-details">
