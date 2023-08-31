@@ -461,6 +461,7 @@ button:hover {
 
   .event-links {
     overflow-wrap: break-word;
+    flex-direction: column;
   }
 
   .event-title {
