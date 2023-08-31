@@ -6,6 +6,7 @@ export default function Instagram() {
       const widgetJS = document.createElement('script'); 
       widgetJS.src = 'https://w.behold.so/widget.js';
       widgetJS.async = true;
+      widgetJS.type = 'module'
       widgetJS.onload = () => {
         window.beholdWidgets.initialize();
       };
