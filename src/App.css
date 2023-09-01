@@ -8,11 +8,28 @@
 }
 
 @font-face {
-  font-family: "Calibre";
-  src: url("./assets/fonts/CalibreRegular.woff2") format("woff2"),
-    url("./assets/fonts/CalibreRegular.woff") format("woff");
+  font-family: "CalItalic";
+  src: url("./assets/fonts/WorkSans-Italic.ttf") format("ttf"),
+    url("./assets/fonts/WorkSans-Italic.ttf") format("ttf");
   /* Add additional src declarations for different font formats if needed */
   font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url("./assets/fonts/WorkSans-Regular.ttf") format("woff2"),
+    url("./assets/fonts/WorkSans-Regular.ttf") format("woff");
+  /* Add additional src declarations for different font formats if needed */
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CalBold";
+  src: url("./assets/fonts/WorkSans-Regular.ttf") format("ttf"),
+    url("./assets/fonts/WorkSans-Medium.ttf") format("ttf");
+  /* Add additional src declarations for different font formats if needed */
   font-style: normal;
 }
 
@@ -42,6 +59,9 @@
   animation: controlsHoverOut 0.25s ease-out 0s 1 normal forwards;
 }
 
+strong {
+  font-family: CalBold;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -209,7 +229,7 @@ button:hover {
 
 .selected-date {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   padding: 1vw 2vw 1vw 2vw;
   background-color: #0000ff;
@@ -422,6 +442,17 @@ button:hover {
     padding-bottom: 15%;
   }
 
+  #all-events {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 120vw;
+    margin: auto;
+    overflow: scroll;
+    height: fit-content;
+    z-index: 6;
+    padding: 0 2vw;
+  }
+
   .checkbox-grid {
     display: none !important;
   }
@@ -436,7 +467,7 @@ button:hover {
 
   p,
   .what-we-do {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   h2 {
@@ -461,7 +492,6 @@ button:hover {
 
   .event-links {
     overflow-wrap: break-word;
-    flex-direction: column;
   }
 
   .event-title {
@@ -474,7 +504,6 @@ button:hover {
 
   .event-links {
     display: flex;
-    width: 70%;
   }
 
   .event-date {
