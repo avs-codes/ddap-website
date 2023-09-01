@@ -43,8 +43,8 @@ function App() {
           </div>
 
           <p className="what-we-do">
-            Digital Design @ Parsons <i>(DDAP for short)</i> is a student-run
-            club for designers interested in web design, UX and creative coding.
+            D-DAP is a student-run club for designers interested in areas like
+            web design, UX and creative coding.
           </p>
           <p className="what-we-do">
             We meet on <u>Wednesdays from 4-6pm,</u> either hosting guest
@@ -62,22 +62,23 @@ function App() {
             about upcoming events ꕤꕤꕤꕤꕤ <br />
             <br />
           </p>
-
-          <p className="what-we-do">
-            This semester, we're looking to <u> pay students</u> to give demos
-            on new programs and tools. Our{" "}
-            <a href="https://forms.gle/zuPjC9pJ7HgYha4MA" target="_blank">
-              Demo List
-            </a>{" "}
-            has a few we want to schedule, but if you have your own idea please
-            let us knowwww
-          </p>
         </section>
         <section>
           {/* The schedule would be contained here as a React component */}
           <Schedule />
         </section>
-        <section></section>
+
+        <section>
+          <p className="what-we-do">
+            This semester, we're looking to <u> pay students</u> to give demos
+            on new programs and tools. Our{" "}
+            <a href="https://forms.gle/zuPjC9pJ7HgYha4MA" target="_blank">
+              demo list
+            </a>{" "}
+            has a few we want to schedule, but if you have your own idea please
+            let us knowwww
+          </p>
+        </section>
         <section>
           <h2 className="section-title">Gallery</h2>
           <div>
