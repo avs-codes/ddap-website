@@ -52,7 +52,7 @@ function App() {
           </p>
           <p>Our meetings are open to everyone !</p>
           <p>
-            For{" "}
+            We send out weekly{" "}
             <a
               href="https://docs.google.com/forms/d/1FGlV54QMuCoUHvwZAB28qHUk15tnFaWuM7IxeHvVpDY/edit"
               target="_blank"
@@ -75,8 +75,7 @@ function App() {
             <a href="https://forms.gle/zuPjC9pJ7HgYha4MA" target="_blank">
               demo list
             </a>{" "}
-            has a few we want to schedule, but if you have your own idea please
-            let us knowwww
+            has a few we'd like to schedule
           </p>
         </section>
         <section>
