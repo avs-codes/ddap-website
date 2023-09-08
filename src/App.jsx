@@ -85,8 +85,8 @@ function App() {
           </div>
         </section>
         <section>
-          {/* <h2 className="section-title">Leadership</h2> */}
-          {/* <div>
+          {/* <h2 className="section-title">Leadership</h2>
+          <div>
             <Team />
           </div> */}
           <div className="ig-link">

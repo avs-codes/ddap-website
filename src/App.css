@@ -292,7 +292,7 @@ button:hover {
 }
 
 .event-link {
-  padding-right: 2vw;
+  padding-right: 0.75vw;
   font-size: 1vw;
   padding-top: 1.25%;
 }
