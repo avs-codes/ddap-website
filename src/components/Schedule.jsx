@@ -46,17 +46,16 @@ function Schedule() {
       <div  class="selected-event">
         <div class="event-details">
           <h1 class="selected-title">${entry["event"]}</h1>
+
+          <h4 class="selected-type">${entry["month"] + " " + entry["date"]}</h4>
           <h4 class="selected-type">Format: ${entry["type"]}</h4>
-          <h4 class="selected-subject">About: ${entry["subject"]}</h4>
+          <h4 class="selected-subject">Subject: ${entry["subject"]}</h4>
+
           <div class="selected-description">${entry["description"]}</div>
           <div class="selected-links">
-            <a href=${entry["link1"]}>${entry["link1"]}</a>
-            <a href=${entry["link2"]}>${entry["link2"]}</a>
+            <a href=${entry["link1"]}>${entry["link1title"]}</a>
+            <a href=${entry["link2"]}>${entry["link2title"]}</a>
           </div>
-        </div>
-        <div class="selected-date">
-          <div class="event-month">${entry["month"]}</div>
-          <div class="event-day"> ${entry["date"]}</div>
         </div>
       </div>
     `
@@ -101,10 +100,10 @@ function Schedule() {
 
               <div data-index={index} className="event-links">
                 <a data-index={index} className="event-link" href={item["link1"]}>
-                  {item["link1"]}
+                  {item["link1title"]}
                 </a>
                 <a data-index={index} className="event-link" href={item["link2"]}>
-                  {item["link2"]}
+                  {item["link2title"]}
                 </a>
               </div>
             </div>
