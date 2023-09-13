@@ -94,7 +94,6 @@ p {
 
 p {
   line-height: 1.2em;
-
 }
 
 h2 {
@@ -336,6 +335,24 @@ button:hover {
 .team-member-headshot {
   width: 90%;
   padding-bottom: 5%;
+  filter: drop-shadow(-0.25rem 0.25rem 0.2rem #b8b8b8);
+}
+
+#pic1 {
+  transform: rotate(-1.4deg);
+}
+
+#pic2 {
+  transform: rotate(+2deg);
+}
+#pic3 {
+  transform: rotate(0.3deg);
+}
+#pic4 {
+  transform: rotate(-2.2deg);
+}
+#pic5 {
+  transform: rotate(1.3deg);
 }
 
 .team-member-name {
@@ -402,7 +419,6 @@ button:hover {
   align-items: center;
   cursor: pointer;
   overflow-x: hidden;
-
 }
 
 .checkbox {
@@ -444,15 +460,13 @@ button:hover {
   display: none;
 }
 
-
-@media screen and (min-width: 1550px){
+@media screen and (min-width: 1550px) {
   section {
     padding-bottom: 5%;
     margin: 0 auto;
     width: 90%;
   }
 }
-
 
 @media screen and (max-width: 700px) {
   section {

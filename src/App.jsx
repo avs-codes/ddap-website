@@ -85,10 +85,10 @@ function App() {
           </div>
         </section>
         <section>
-          {/* <h2 className="section-title">Leadership</h2>
+          <h2 className="section-title">Leadership</h2>
           <div>
             <Team />
-          </div> */}
+          </div>
           <div className="ig-link">
             <a
               className="ig-icon"

@@ -4,29 +4,38 @@ const Team = () => {
   // Placeholder data with three properties: headshot, name, and title
   const teamMembers = [
     {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      headshot:
+        "https://www.datocms-assets.com/99382/1694644825-polaroid-graeme.png",
       name: "Graeme Mounsey",
       title: "President",
+      id: "pic1",
     },
     {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      headshot:
+        "https://www.datocms-assets.com/99382/1694644786-polaroid-alex.png",
       name: "Alex Silva",
       title: "Vice President",
+      id: "pic2",
     },
     {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      headshot:
+        "https://www.datocms-assets.com/99382/1694644843-polaroid-lakeisha.png",
       name: "Lakeisha Sharonina",
       title: "Head of Design",
+      id: "pic3",
     },
     {
       headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
       name: "Hope Kim",
       title: "Treasurer",
+      id: "pic4",
     },
     {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      headshot:
+        "https://www.datocms-assets.com/99382/1694644807-polaroid-deeva.png",
       name: "Deeva Thomas",
-      title: "Assistant",
+      title: "Coordinator",
+      id: "pic5",
     },
   ];
 
@@ -38,6 +47,7 @@ const Team = () => {
             src={member.headshot}
             alt={`Headshot of ${member.name}`}
             className="team-member-headshot"
+            id={member.id}
           />
           <div className="team-member-name">{member.name}</div>
           <div className="team-member-title">{member.title}</div>
