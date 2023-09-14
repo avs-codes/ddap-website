@@ -349,10 +349,10 @@ button:hover {
   transform: rotate(0.3deg);
 }
 #pic4 {
-  transform: rotate(-2.2deg);
+  transform: rotate(1.9deg);
 }
 #pic5 {
-  transform: rotate(1.3deg);
+  transform: rotate(-1.3deg);
 }
 
 .team-member-name {
