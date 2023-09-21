@@ -25,7 +25,7 @@ const Team = () => {
       id: "pic3",
     },
     {
-      headshot: "https://www.datocms-assets.com/103104/1691015804-default.png",
+      headshot: "https://www.datocms-assets.com/99382/1695264457-hope.png",
       name: "Hope Kim",
       title: "Treasurer",
       id: "pic4",
