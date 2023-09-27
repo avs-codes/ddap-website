@@ -31,7 +31,7 @@ class Garden extends Component {
       innerHeight - marginY * 2 * innerHeight - border * 2 * innerHeight;
 
     // Calculate the number of rows and columns based on the adjusted cell size
-    const rows = Math.floor((0.75 * availableHeight) / minCellSize);
+    const rows = Math.floor(availableHeight / minCellSize);
     const cols = Math.floor(availableWidth / minCellSize);
 
     // Calculate the actual cell size to fill the viewport with margins and borders
