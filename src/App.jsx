@@ -99,7 +99,7 @@ function App() {
             </a>
             <a
               className="ig-icon"
-              href="https://www.instagram.com/parsonscodelab/"
+              href="https://www.instagram.com/digitaldesignatparsons/"
               target="_blank"
             >
               <img src="https://www.datocms-assets.com/99382/1693250696-slack.svg" />
