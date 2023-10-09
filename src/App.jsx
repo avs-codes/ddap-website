@@ -92,7 +92,7 @@ function App() {
           <div className="ig-link">
             <a
               className="ig-icon"
-              href="https://www.instagram.com/parsonscodelab/"
+              href="https://www.instagram.com/digitaldesignatparsons/"
               target="_blank"
             >
               <img src="https://www.datocms-assets.com/103104/1690991093-ig.svg" />
