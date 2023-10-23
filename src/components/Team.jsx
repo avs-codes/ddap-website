@@ -5,34 +5,33 @@ const Team = () => {
   const teamMembers = [
     {
       headshot:
-        "https://www.datocms-assets.com/99382/1694644825-polaroid-graeme.png",
+        "https://image-gosting.s3.amazonaws.com/ddap/polaroid+graeme.png",
       name: "Graeme Mounsey",
       title: "President",
       id: "pic1",
     },
     {
-      headshot:
-        "https://www.datocms-assets.com/99382/1694644786-polaroid-alex.png",
+      headshot: "https://image-gosting.s3.amazonaws.com/ddap/polaroid+alex.png",
       name: "Alex Silva",
       title: "Vice President",
       id: "pic2",
     },
     {
       headshot:
-        "https://www.datocms-assets.com/99382/1694644843-polaroid-lakeisha.png",
+        "https://image-gosting.s3.amazonaws.com/ddap/polaroid+lakeisha.png",
       name: "Lakeisha Sharonina",
       title: "Head of Design",
       id: "pic3",
     },
     {
-      headshot: "https://www.datocms-assets.com/99382/1695264457-hope.png",
+      headshot: "https://image-gosting.s3.amazonaws.com/ddap/hope.png",
       name: "Hope Kim",
       title: "Treasurer",
       id: "pic4",
     },
     {
       headshot:
-        "https://www.datocms-assets.com/99382/1694644807-polaroid-deeva.png",
+        "https://image-gosting.s3.amazonaws.com/ddap/polaroid+deeva.png",
       name: "Deeva Thomas",
       title: "Coordinator",
       id: "pic5",
