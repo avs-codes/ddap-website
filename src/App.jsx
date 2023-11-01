@@ -28,7 +28,7 @@ function App() {
         <a href="#title">
           <img
             id="anchor"
-            src="https://www.datocms-assets.com/99382/1692823390-a.svg"
+            src="https://image-gosting.s3.amazonaws.com/ddap/a.svg"
             style={{ stroke: "white" }}
             className={`controlsHoverIn ${hovered ? "" : "controlsHoverOut"}`}
             onMouseEnter={handleMouseEnter}
@@ -95,14 +95,14 @@ function App() {
               href="https://www.instagram.com/digitaldesignatparsons/"
               target="_blank"
             >
-              <img src="https://www.datocms-assets.com/103104/1690991093-ig.svg" />
+              <img src="https://image-gosting.s3.amazonaws.com/ddap/ig.svg" />
             </a>
             <a
               className="ig-icon"
               href="https://www.instagram.com/digitaldesignatparsons/"
               target="_blank"
             >
-              <img src="https://www.datocms-assets.com/99382/1693250696-slack.svg" />
+              <img src="https://image-gosting.s3.amazonaws.com/ddap/slack.svg" />
             </a>
           </div>
         </section>
