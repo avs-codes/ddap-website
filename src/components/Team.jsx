@@ -36,6 +36,20 @@ const Team = () => {
       title: "Coordinator",
       id: "pic5",
     },
+    {
+      headshot:
+        "https://image-gosting.s3.amazonaws.com/ddap/polaroid+thiha.jpg",
+      name: "Thiha Min Zin",
+      title: "In-House Designer",
+      id: "pic6",
+    },
+    {
+      headshot:
+        "",
+      name: "Jennifer Lee",
+      title: "In-House Designer",
+      id: "pic7",
+    }
   ];
 
   return (

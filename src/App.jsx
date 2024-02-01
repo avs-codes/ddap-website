@@ -2,6 +2,8 @@ import Garden from "./components/Garden.jsx";
 import Instagram from "./components/Instagram.jsx";
 import Schedule from "./components/Schedule.jsx";
 import Team from "./components/Team.jsx";
+import Arena from "./components/Arena.jsx"
+
 import React, { useState } from "react";
 
 import "./App.css";
@@ -54,7 +56,7 @@ function App() {
           <p>
             We send out weekly{" "}
             <a
-              href="https://docs.google.com/forms/d/1FGlV54QMuCoUHvwZAB28qHUk15tnFaWuM7IxeHvVpDY/edit"
+              href="https://forms.gle/R66VYV9Qq81R2YU68"
               target="_blank"
             >
               e-mail updates
@@ -82,6 +84,12 @@ function App() {
           <h2 className="section-title">Gallery</h2>
           <div>
             <Instagram />
+          </div>
+        </section>
+        <section>
+          <h2 className="section-title">Are.na Channel</h2>
+          <div>
+            <Arena />
           </div>
         </section>
         <section>
