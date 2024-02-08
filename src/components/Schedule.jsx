@@ -28,7 +28,6 @@ function Schedule() {
     fetchData()
       .then((response) => response.filter((item) => item.status === "upcoming"))
       .then((filtered) => setData(filtered));
-      console.log(data)
   }, []);
 
   const handleShowAllEvents = () => {

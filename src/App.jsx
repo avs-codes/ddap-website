@@ -87,10 +87,7 @@ function App() {
           </div>
         </section>
         <section>
-          <h2 className="section-title">Are.na Channel</h2>
-          <div>
             <Arena />
-          </div>
         </section>
         <section>
           <h2 className="section-title">Leadership</h2>

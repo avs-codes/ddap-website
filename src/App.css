@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: "CalItalic";
-  src: url("./assets/fonts/WorkSans-Italic.ttf") format("ttf"),
-    url("./assets/fonts/WorkSans-Italic.ttf") format("ttf");
+  src: url("./assets/fonts/CalibreRegularItalic.woff2") format("woff2"),
+    url("./assets/fonts/CalibreRegularItalic.woff") format("woff");
   /* Add additional src declarations for different font formats if needed */
   font-weight: 300;
   font-style: italic;
@@ -18,8 +18,8 @@
 
 @font-face {
   font-family: "Calibre";
-  src: url("./assets/fonts/WorkSans-Regular.ttf") format("woff2"),
-    url("./assets/fonts/WorkSans-Regular.ttf") format("woff");
+  src: url("./assets/fonts/CalibreRegular.woff2") format("woff2"),
+    url("./assets/fonts/CalibreRegular.woff") format("woff");
   /* Add additional src declarations for different font formats if needed */
   font-weight: 300;
   font-style: normal;
@@ -27,8 +27,8 @@
 
 @font-face {
   font-family: "CalBold";
-  src: url("./assets/fonts/WorkSans-Regular.ttf") format("ttf"),
-    url("./assets/fonts/WorkSans-Medium.ttf") format("ttf");
+  src: url("./assets/fonts/CalibreMedium.woff2") format("woff2"),
+    url("./assets/fonts/CalibreMedium.woff") format("woff");
   /* Add additional src declarations for different font formats if needed */
   font-style: normal;
 }
@@ -79,6 +79,10 @@ body {
   display: block;
   margin: 0;
   padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 section {
@@ -458,6 +462,28 @@ button:hover {
 /* Hide the actual checkbox input */
 .checkbox input {
   display: none;
+}
+
+#arena-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.arena-child {
+  width: calc(100% + 0.5px);
+  transition: background 0.3s;
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s ease;
+}
+
+.arena-child:hover {
+  filter: brightness(.6);
+}
+
+.arena-img {
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 @media screen and (min-width: 1550px) {

@@ -5,8 +5,6 @@ export default function Arena () {
   const ARENA_API_CHANNEL_URL = `https://api.are.na/v2/channels/${CHANNEL_ID}`;
   const ARENA_CHANNEL_THUMB_URL = ARENA_API_CHANNEL_URL + '/thumb';
 
-  console.log(ARENA_API_CHANNEL_URL)
-  
   async function fetchData () {
     const fetchRequest = await fetch(ARENA_CHANNEL_THUMB_URL, {
       headers: {
@@ -21,15 +19,23 @@ export default function Arena () {
     return await fetchRequest.json()
   }
 
-  const [data, setData] = useState([]);
+  const [arenaData, setData] = useState([]);
 
   useEffect( () => {
     fetchData()
-      .then((response) => console.log(response))
+      .then((response) => setData(response.contents))
   })
 
   return (
-    <div>
-    </div>
+    <>
+      <h2 className="section-title">Are.na Channel</h2>
+      <div id="arena-container">
+        {arenaData.map((item) => (
+          <a key={item['connection_id']} href={'https://www.are.na/block/' + item['id']} className="arena-child">
+            <img className="arena-img" src={item['image']['square']['url']}/>
+          </a>
+        ))}
+      </div>
+    </>
   )
 }
