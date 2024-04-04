@@ -1,7 +1,6 @@
 @font-face {
   font-family: "188Pixel";
-  src: url("./assets/fonts/188_Pixel-70.woff2") format("woff2"),
-    url("./assets/fonts/188_Pixel-70.woff Regular.woff") format("woff");
+  src: url("./assets/fonts/188_Pixel-70.woff2") format("woff2");
   /* Add additional src declarations for different font formats if needed */
   font-weight: normal;
   font-style: normal;

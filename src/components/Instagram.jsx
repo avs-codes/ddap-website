@@ -1,13 +1,6 @@
-import { useEffect } from "react";
+import BeholdWidget from "@behold/react"
 
 export default function Instagram() {
-  useEffect(() => {
-      window.beholdWidgets.initialize()
-
-    
-  }, []);
-
-  return ( 
-    <figure data-behold-id="6woKiegGNe2C7WJWMyUa"></figure>
-  );
+  return <BeholdWidget feedId="z2pNw5JR6jJlLtUxIQv6" />
 }
+

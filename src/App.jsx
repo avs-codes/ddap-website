@@ -69,17 +69,6 @@ function App() {
           {/* The schedule would be contained here as a React component */}
           <Schedule />
         </section>
-
-        <section>
-          <p className="what-we-do">
-            This semester, we're looking to <u> pay students</u> to give demos
-            on new programs and tools. Our{" "}
-            <a href="https://forms.gle/zuPjC9pJ7HgYha4MA" target="_blank">
-              demo list
-            </a>{" "}
-            has a few we'd like to schedule
-          </p>
-        </section>
         <section>
           <h2 className="section-title">Gallery</h2>
           <div>
@@ -101,13 +90,6 @@ function App() {
               target="_blank"
             >
               <img src="https://image-gosting.s3.amazonaws.com/ddap/ig.svg" />
-            </a>
-            <a
-              className="ig-icon"
-              href="https://www.instagram.com/digitaldesignatparsons/"
-              target="_blank"
-            >
-              <img src="https://image-gosting.s3.amazonaws.com/ddap/slack.svg" />
             </a>
           </div>
         </section>
